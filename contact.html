@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact &amp; Checkout | Tasty Bites</title>
+    <meta name="description" content="Enter your name, phone number and delivery address to place your Tasty Bites order.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e98b00">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tasty Bites">
+    <meta property="og:title" content="Contact &amp; Checkout | Tasty Bites">
+    <meta property="og:description" content="Enter your name, phone number and delivery address to place your Tasty Bites order.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        try { if (localStorage.getItem("theme") === "dark") document.documentElement.classList.add("dark"); } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="sidebar" id="sidebar" aria-label="Quick links">
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+            <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+
+        <ul class="side-links">
+            <li><a href="index.html" title="Home"><i class="bi bi-house" aria-hidden="true"></i><span class="label">Home</span></a></li>
+            <li><a href="menu.html" title="Menu"><i class="bi bi-journal-richtext" aria-hidden="true"></i><span class="label">Menu</span></a></li>
+            <li><a href="deals.html" title="Deals"><i class="bi bi-tags" aria-hidden="true"></i><span class="label">Deals</span></a></li>
+            <li><a href="services.html" title="Services"><i class="bi bi-headset" aria-hidden="true"></i><span class="label">Services</span></a></li>
+            <li><a href="branches.html" title="Location"><i class="bi bi-geo-alt" aria-hidden="true"></i><span class="label">Location</span></a></li>
+            <li><a href="cart.html" data-cart-link aria-label="Cart" title="Cart"><i class="bi bi-bag" aria-hidden="true"></i><span class="label">Cart</span></a></li>
+        </ul>
+
+        <div class="sidebar-bottom">
+            <button type="button" class="theme-btn" id="themeToggle" title="Switch to dark mode" aria-label="Switch to dark mode">
+                <i class="bi bi-moon" aria-hidden="true"></i><span class="label">Dark Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true" inert>
+        <div class="drawer-head">
+            <div class="drawer-user">
+                <span class="drawer-avatar"><i class="bi bi-person-circle" aria-hidden="true"></i></span>
+                <span>
+                    <strong>Tasty Bites</strong>
+                    <small>WELCOME</small>
+                </span>
+            </div>
+            <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <nav class="drawer-links" aria-label="Main menu">
+            <a href="index.html"><i class="bi bi-house" aria-hidden="true"></i><span>Home</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="menu.html"><i class="bi bi-journal-richtext" aria-hidden="true"></i><span>Menu</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="deals.html"><i class="bi bi-tags" aria-hidden="true"></i><span>Special Deals</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="services.html"><i class="bi bi-headset" aria-hidden="true"></i><span>Services</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="about.html"><i class="bi bi-info-circle" aria-hidden="true"></i><span>About Us</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="branches.html"><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Our Branches</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="reviews.html"><i class="bi bi-star" aria-hidden="true"></i><span>Reviews</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="contact.html" class="active" aria-current="page"><i class="bi bi-telephone" aria-hidden="true"></i><span>Contact Us</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="cart.html"><i class="bi bi-bag" aria-hidden="true"></i><span>Cart</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+        </nav>
+
+        <div class="drawer-bottom">
+            <button type="button" class="drawer-theme" id="drawerTheme" role="switch" aria-checked="false">
+                <i class="bi bi-moon-stars" aria-hidden="true"></i>
+                <span><strong>Dark Mode</strong><small id="drawerThemeText">DISABLED</small></span>
+                <span class="switch" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <header class="topbar">
+            <button type="button" class="mobile-menu" id="mobileMenu" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+
+            <a href="index.html" class="logo" aria-label="Tasty Bites home">
+                <img src="assets/images/tasty%20bites.png" alt="Tasty Bites logo" width="125" height="85">
+            </a>
+
+            <div class="topbar-right">
+                <a href="menu.html" class="header-order">Order Now <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="cart.html" class="topbar-cart" data-cart-link aria-label="Cart"><i class="bi bi-bag" aria-hidden="true"></i></a>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="page-hero">
+                <div class="page-hero-content">
+                    <span class="page-hero-kicker">Checkout</span>
+                    <h1>Contact <span>Details</span></h1>
+                    <p>Tell us where to deliver your food and how to reach you.</p>
+                </div>
+            </section>
+
+            <div class="checkout-wrap" id="checkoutPage">
+
+                <div class="checkout-layout" id="checkoutLayout">
+
+                    <section class="checkout-form-box" aria-labelledby="deliveryTitle">
+                        <h2 id="deliveryTitle">Delivery Details</h2>
+                        <p>All fields are required.</p>
+
+                        <form id="orderForm" novalidate>
+
+                            <div class="field">
+                                <label for="orderName">Full name</label>
+                                <input type="text" id="orderName" maxlength="35" placeholder="e.g. Ayesha Khan" autocomplete="name" aria-describedby="nameError">
+                                <small class="field-error" id="nameError" role="alert"></small>
+                            </div>
+
+                            <div class="field">
+                                <label for="orderPhone">Phone number</label>
+                                <input type="tel" id="orderPhone" maxlength="16" inputmode="tel" placeholder="03001234567 or 923001234567" autocomplete="tel" aria-describedby="phoneHint phoneError">
+                                <small class="field-hint" id="phoneHint">Start with 03 (11 digits) or 92 (12 digits)</small>
+                                <small class="field-error" id="phoneError" role="alert"></small>
+                            </div>
+
+                            <div class="field">
+                                <label for="orderAddress">Delivery address</label>
+                                <textarea id="orderAddress" maxlength="150" placeholder="House, street, area, city" autocomplete="street-address" aria-describedby="addressError"></textarea>
+                                <small class="field-error" id="addressError" role="alert"></small>
+                            </div>
+
+                            <button type="submit" class="place-btn" id="placeBtn">Place Order <i class="bi bi-check2-circle" aria-hidden="true"></i></button>
+                            <a href="cart.html" class="continue-link"><i class="bi bi-arrow-left" aria-hidden="true"></i> Back to cart</a>
+                        </form>
+                    </section>
+
+                    <aside class="cart-summary" id="orderSummary" aria-label="Your order">
+                        <h3>Your Order</h3>
+                        <div class="order-lines" id="orderLines"></div>
+                        <div class="sum-row total"><span>Total Bill</span><strong id="orderTotal">Rs. 0</strong></div>
+                        <a href="cart.html" class="continue-link"><i class="bi bi-pencil" aria-hidden="true"></i> Edit cart</a>
+                    </aside>
+
+                </div>
+
+                <div class="order-state" id="orderProcessing" hidden>
+                    <div class="spinner" aria-hidden="true"></div>
+                    <h2>Processing your order...</h2>
+                    <p>Please wait a moment, we are placing your order.</p>
+                </div>
+
+                <div class="order-state" id="orderDone" hidden role="status">
+                    <div class="done-icon" aria-hidden="true">&#10003;</div>
+                    <h2>Order placed!</h2>
+                    <p id="doneText"></p>
+                    <div class="done-box">
+                        <div class="sum-row"><span>Order number</span><strong id="doneId"></strong></div>
+                        <div class="sum-row"><span>Total bill</span><strong id="doneTotal"></strong></div>
+                    </div>
+                    <a href="menu.html" class="checkout-btn">Back to Menu <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                </div>
+
+                <div class="cart-empty" id="checkoutEmpty" hidden>
+                    <div class="empty-icon"><i class="bi bi-bag" aria-hidden="true"></i></div>
+                    <h2>Your cart is empty</h2>
+                    <p>Add some items to your cart before checking out.</p>
+                    <a href="menu.html" class="checkout-btn">Browse Menu <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                </div>
+
+            </div>
+        </main>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="app-card">
+                <div class="app-text">
+                    <h3>Order faster with our App</h3>
+                    <p>Download the Tasty Bites App for exclusive deals, real-time order tracking, and seamless reordering.</p>
+                </div>
+                <div class="app-buttons">
+
+                    <a class="store-btn" href="https://play.google.com/store" target="_blank" rel="noopener">
+                        <i class="bi bi-google-play" aria-hidden="true"></i>
+                        <span><small>GET IT ON</small>Google Play</span>
+                    </a>
+                    <a class="store-btn" href="https://www.apple.com/app-store/" target="_blank" rel="noopener">
+                        <i class="bi bi-apple" aria-hidden="true"></i>
+                        <span><small>Download on the</small>App Store</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row footer-main">
+                <div class="col-12 col-md-6 col-lg-3 footer-brand">
+                    <a href="index.html" aria-label="Tasty Bites home"><img src="assets/images/tasty%20bites.png" alt="Tasty Bites logo" width="120" height="90" loading="lazy"></a>
+                    <p>Count the memories, not the calories. Great food creates great moments.</p>
+                </div>
+
+                <nav class="col-6 col-md-6 col-lg-3 footer-links" aria-label="Company">
+                    <h4>Company</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="deals.html">Deals</a>
+                </nav>
+
+                <nav class="col-6 col-md-6 col-lg-3 footer-links" aria-label="Support">
+                    <h4>Support</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="branches.html">Our Branches</a>
+                    <a href="services.html">Services</a>
+                </nav>
+
+                <div class="col-12 col-md-6 col-lg-3 footer-links">
+                    <h4>Social</h4>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Tasty Bites on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Tasty Bites on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="Chat with Tasty Bites on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+                        <a href="contact.html" aria-label="Contact Tasty Bites"><i class="bi bi-telephone" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="footer-quote">&ldquo;Wherever your craving calls &mdash; we&rsquo;re already there, one perfect bite away.&rdquo;</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    </div>
+
+    <div class="toast-msg" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="assets/Javascript/script.js" defer></script>
+</body>
+</html>

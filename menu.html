@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Tasty Bites</title>
+    <meta name="description" content="Browse the Tasty Bites menu: burgers, pizza, wraps, wings, fries, drinks and desserts. Add your favourites to the cart and order online.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e98b00">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tasty Bites">
+    <meta property="og:title" content="Menu | Tasty Bites">
+    <meta property="og:description" content="Browse the Tasty Bites menu: burgers, pizza, wraps, wings, fries, drinks and desserts. Add your favourites to the cart and order online.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script>
+        try { if (localStorage.getItem("theme") === "dark") document.documentElement.classList.add("dark"); } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav class="sidebar" id="sidebar" aria-label="Quick links">
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+            <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+
+        <ul class="side-links">
+            <li><a href="index.html" title="Home"><i class="bi bi-house" aria-hidden="true"></i><span class="label">Home</span></a></li>
+            <li><a href="menu.html" class="active" aria-current="page" title="Menu"><i class="bi bi-journal-richtext" aria-hidden="true"></i><span class="label">Menu</span></a></li>
+            <li><a href="deals.html" title="Deals"><i class="bi bi-tags" aria-hidden="true"></i><span class="label">Deals</span></a></li>
+            <li><a href="services.html" title="Services"><i class="bi bi-headset" aria-hidden="true"></i><span class="label">Services</span></a></li>
+            <li><a href="branches.html" title="Location"><i class="bi bi-geo-alt" aria-hidden="true"></i><span class="label">Location</span></a></li>
+            <li><a href="cart.html" data-cart-link aria-label="Cart" title="Cart"><i class="bi bi-bag" aria-hidden="true"></i><span class="label">Cart</span></a></li>
+        </ul>
+
+        <div class="sidebar-bottom">
+            <button type="button" class="theme-btn" id="themeToggle" title="Switch to dark mode" aria-label="Switch to dark mode">
+                <i class="bi bi-moon" aria-hidden="true"></i><span class="label">Dark Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true" inert>
+        <div class="drawer-head">
+            <div class="drawer-user">
+                <span class="drawer-avatar"><i class="bi bi-person-circle" aria-hidden="true"></i></span>
+                <span>
+                    <strong>Tasty Bites</strong>
+                    <small>WELCOME</small>
+                </span>
+            </div>
+            <button type="button" class="drawer-close" id="drawerClose" aria-label="Close menu">
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <nav class="drawer-links" aria-label="Main menu">
+            <a href="index.html"><i class="bi bi-house" aria-hidden="true"></i><span>Home</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="menu.html" class="active" aria-current="page"><i class="bi bi-journal-richtext" aria-hidden="true"></i><span>Menu</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="deals.html"><i class="bi bi-tags" aria-hidden="true"></i><span>Special Deals</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="services.html"><i class="bi bi-headset" aria-hidden="true"></i><span>Services</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="about.html"><i class="bi bi-info-circle" aria-hidden="true"></i><span>About Us</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="branches.html"><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Our Branches</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="reviews.html"><i class="bi bi-star" aria-hidden="true"></i><span>Reviews</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="contact.html"><i class="bi bi-telephone" aria-hidden="true"></i><span>Contact Us</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+            <a href="cart.html"><i class="bi bi-bag" aria-hidden="true"></i><span>Cart</span><i class="bi bi-chevron-right" aria-hidden="true"></i></a>
+        </nav>
+
+        <div class="drawer-bottom">
+            <button type="button" class="drawer-theme" id="drawerTheme" role="switch" aria-checked="false">
+                <i class="bi bi-moon-stars" aria-hidden="true"></i>
+                <span><strong>Dark Mode</strong><small id="drawerThemeText">DISABLED</small></span>
+                <span class="switch" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+
+        <header class="topbar">
+            <button type="button" class="mobile-menu" id="mobileMenu" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+
+            <a href="index.html" class="logo" aria-label="Tasty Bites home">
+                <img src="assets/images/tasty%20bites.png" alt="Tasty Bites logo" width="125" height="85">
+            </a>
+
+            <div class="topbar-right">
+                <a href="menu.html" class="header-order">Order Now <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                <a href="cart.html" class="topbar-cart" data-cart-link aria-label="Cart"><i class="bi bi-bag" aria-hidden="true"></i></a>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="page-hero">
+                <div class="page-hero-content">
+                    <span class="page-hero-kicker">Welcome to Tasty Bites</span>
+                    <h1>Explore Our <span>Delicious Menu</span></h1>
+                    <p>Fresh ingredients, bold flavours and something delicious for every craving. Discover your favourites and enjoy every bite!</p>
+                </div>
+            </section>
+
+            <nav class="menu-tabs" aria-label="Menu categories">
+                <div class="menu-tabs-inner" id="menuTabsInner">
+                    <a href="#burgers" class="menu-tab active" data-target="burgers">Burgers</a>
+                    <a href="#pizza" class="menu-tab" data-target="pizza">Pizza</a>
+                    <a href="#wraps" class="menu-tab" data-target="wraps">Wraps &amp; Rolls</a>
+                    <a href="#wings" class="menu-tab" data-target="wings">Wings &amp; Starters</a>
+                    <a href="#fries" class="menu-tab" data-target="fries">Fries &amp; Sides</a>
+                    <a href="#drinks" class="menu-tab" data-target="drinks">Drinks</a>
+                    <a href="#desserts" class="menu-tab" data-target="desserts">Desserts</a>
+                </div>
+            </nav>
+
+            <div class="menu-wrap">
+
+                <section class="menu-section" id="burgers" aria-labelledby="burgers-title">
+                    <div class="menu-section-head">
+                        <h2 id="burgers-title">Burgers</h2>
+                        <span class="count">4 Items</span>
+                    </div>
+                    <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍔</span>
+                            <img src="assets/images/zinger%20burger.jpg" alt="Zinger Burger" width="400" height="400" loading="eager" decoding="async" onerror="this.remove()">
+                        <span class="food-off">15%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Zinger Burger</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>549</strong><del>Rs. 649</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Zinger Burger to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍔</span>
+                            <img src="assets/images/smash%20beef%20burger.jpg" alt="Smash Beef Burger" width="400" height="400" loading="eager" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Smash Beef Burger</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>699</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Smash Beef Burger to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍔</span>
+                            <img src="assets/images/double%20decker.jpg" alt="Double Patty Crunch" width="400" height="400" loading="eager" decoding="async" onerror="this.remove()">
+                        <span class="food-off">15%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Double Patty Crunch</h3>
+                                <span class="food-serves" title="Serves 2"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>2</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>849</strong><del>Rs. 999</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Double Patty Crunch to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍔</span>
+                            <img src="assets/images/cheesy%20chicken%20burger.jpg" alt="Cheesy Chicken Burger" width="400" height="400" loading="eager" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Cheesy Chicken Burger</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>499</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Cheesy Chicken Burger to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+                <section class="menu-section" id="pizza" aria-labelledby="pizza-title">
+                    <div class="menu-section-head">
+                        <h2 id="pizza-title">Pizza</h2>
+                        <span class="count">4 Items</span>
+                    </div>
+                    <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍕</span>
+                            <img src="assets/images/fajita%20pizza.webp" alt="Fajita Pizza (Large)" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        <span class="food-off">24%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Fajita Pizza (Large)</h3>
+                                <span class="food-serves" title="Serves 3"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>3</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>1,299</strong><del>Rs. 1,699</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Fajita Pizza (Large) to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍕</span>
+                            <img src="assets/images/tikka%20pizza.webp" alt="Tikka Pizza (Medium)" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        <span class="food-off">17%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Tikka Pizza (Medium)</h3>
+                                <span class="food-serves" title="Serves 2"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>2</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>999</strong><del>Rs. 1,199</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Tikka Pizza (Medium) to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍕</span>
+                            <img src="assets/images/malai%20pizza.webp" alt="Malai Pizza (Large)" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Malai Pizza (Large)</h3>
+                                <span class="food-serves" title="Serves 3"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>3</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>1,399</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Malai Pizza (Large) to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍕</span>
+                            <img src="assets/images/migritta%20pizza.png" alt="Margherita Pizza (Medium)" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Margherita Pizza (Medium)</h3>
+                                <span class="food-serves" title="Serves 2"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>2</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>999</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Margherita Pizza (Medium) to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+                <section class="menu-section" id="wraps" aria-labelledby="wraps-title">
+                    <div class="menu-section-head">
+                        <h2 id="wraps-title">Wraps &amp; Rolls</h2>
+                        <span class="count">3 Items</span>
+                    </div>
+                    <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🌯</span>
+                            <img src="assets/images/zinger%20wrap.jpg" alt="Zinger Wrap" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        <span class="food-off">18%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Zinger Wrap</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>449</strong><del>Rs. 549</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Zinger Wrap to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🌯</span>
+                            <img src="assets/images/paratha%20roll.webp" alt="Paratha Roll" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Paratha Roll</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>399</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Paratha Roll to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🌯</span>
+                            <img src="assets/images/tikka%20wrap.webp" alt="Tikka Wrap" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Tikka Wrap</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>429</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Tikka Wrap to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+                <section class="menu-section" id="wings" aria-labelledby="wings-title">
+                    <div class="menu-section-head">
+                        <h2 id="wings-title">Wings &amp; Starters</h2>
+                        <span class="count">3 Items</span>
+                    </div>
+                    <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍗</span>
+                            <img src="assets/images/hot%20wings.jpg" alt="Hot Wings (6 pcs)" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        <span class="food-off">17%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Hot Wings (6 pcs)</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>499</strong><del>Rs. 599</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Hot Wings (6 pcs) to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍗</span>
+                            <img src="assets/images/nuggets.jpg" alt="Nuggets (9 pcs)" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Nuggets (9 pcs)</h3>
+                                <span class="food-serves" title="Serves 2"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>2</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>549</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Nuggets (9 pcs) to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍗</span>
+                            <img src="assets/images/crispy%20strips.jpg" alt="Crispy Strips" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Crispy Strips</h3>
+                                <span class="food-serves" title="Serves 2"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>2</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>599</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Crispy Strips to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+                <section class="menu-section" id="fries" aria-labelledby="fries-title">
+                    <div class="menu-section-head">
+                        <h2 id="fries-title">Fries &amp; Sides</h2>
+                        <span class="count">3 Items</span>
+                    </div>
+                    <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍟</span>
+                            <img src="assets/images/loaded%20fries.jpg" alt="Loaded Fries" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        <span class="food-off">18%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Loaded Fries</h3>
+                                <span class="food-serves" title="Serves 2"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>2</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>449</strong><del>Rs. 549</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Loaded Fries to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍟</span>
+                            <img src="assets/images/masala%20fries.jpg" alt="Masala Fries" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Masala Fries</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>299</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Masala Fries to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🥖</span>
+                            <img src="assets/images/garlic%20bread.jpg" alt="Garlic Bread" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Garlic Bread</h3>
+                                <span class="food-serves" title="Serves 2"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>2</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>349</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Garlic Bread to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+                <section class="menu-section" id="drinks" aria-labelledby="drinks-title">
+                    <div class="menu-section-head">
+                        <h2 id="drinks-title">Drinks</h2>
+                        <span class="count">3 Items</span>
+                    </div>
+                    <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🥤</span>
+                            <img src="assets/images/soft%20drink.jpg" alt="Soft Drink (345ml)" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Soft Drink (345ml)</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>99</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Soft Drink (345ml) to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍹</span>
+                            <img src="assets/images/mint%20margirita.jpg" alt="Mint Margarita" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Mint Margarita</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>249</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Mint Margarita to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🧋</span>
+                            <img src="assets/images/iced%20tea.webp" alt="Iced Tea" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Iced Tea</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>199</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Iced Tea to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+                <section class="menu-section" id="desserts" aria-labelledby="desserts-title">
+                    <div class="menu-section-head">
+                        <h2 id="desserts-title">Desserts</h2>
+                        <span class="count">2 Items</span>
+                    </div>
+                    <div class="food-grid">
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍫</span>
+                            <img src="assets/images/choco%20lava%20cake.jpg" alt="Choco Lava Cake" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Choco Lava Cake</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>299</strong>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Choco Lava Cake to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card">
+                        <div class="food-img">
+                            <span class="food-emoji" aria-hidden="true">🍨</span>
+                            <img src="assets/images/Brownie%20Sundae.jpg" alt="Brownie Sundae" width="400" height="400" loading="lazy" decoding="async" onerror="this.remove()">
+                        <span class="food-off">11%<small>OFF</small></span>
+                        </div>
+                        <div class="food-info">
+                            <div class="food-top">
+                                <h3 class="food-name">Brownie Sundae</h3>
+                                <span class="food-serves" title="Serves 1"><i class="bi bi-people" aria-hidden="true"></i> <span class="visually-hidden-text">Serves </span>1</span>
+                            </div>
+                            <div class="food-bottom">
+                                <div class="food-price">
+                                    <span class="rs">Rs.</span><strong>399</strong><del>Rs. 449</del>
+                                </div>
+                                <button type="button" class="add-btn" aria-label="Add Brownie Sundae to cart"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </article>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="app-card">
+                <div class="app-text">
+                    <h3>Order faster with our App</h3>
+                    <p>Download the Tasty Bites App for exclusive deals, real-time order tracking, and seamless reordering.</p>
+                </div>
+                <div class="app-buttons">
+
+                    <a class="store-btn" href="https://play.google.com/store" target="_blank" rel="noopener">
+                        <i class="bi bi-google-play" aria-hidden="true"></i>
+                        <span><small>GET IT ON</small>Google Play</span>
+                    </a>
+                    <a class="store-btn" href="https://www.apple.com/app-store/" target="_blank" rel="noopener">
+                        <i class="bi bi-apple" aria-hidden="true"></i>
+                        <span><small>Download on the</small>App Store</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row footer-main">
+                <div class="col-12 col-md-6 col-lg-3 footer-brand">
+                    <a href="index.html" aria-label="Tasty Bites home"><img src="assets/images/tasty%20bites.png" alt="Tasty Bites logo" width="120" height="90" loading="lazy"></a>
+                    <p>Count the memories, not the calories. Great food creates great moments.</p>
+                </div>
+
+                <nav class="col-6 col-md-6 col-lg-3 footer-links" aria-label="Company">
+                    <h4>Company</h4>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="deals.html">Deals</a>
+                </nav>
+
+                <nav class="col-6 col-md-6 col-lg-3 footer-links" aria-label="Support">
+                    <h4>Support</h4>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="reviews.html">Reviews</a>
+                    <a href="branches.html">Our Branches</a>
+                    <a href="services.html">Services</a>
+                </nav>
+
+                <div class="col-12 col-md-6 col-lg-3 footer-links">
+                    <h4>Social</h4>
+
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Tasty Bites on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Tasty Bites on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="Chat with Tasty Bites on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+                        <a href="contact.html" aria-label="Contact Tasty Bites"><i class="bi bi-telephone" aria-hidden="true"></i></a>
+                    </div>
+                    <p class="footer-quote">&ldquo;Wherever your craving calls &mdash; we&rsquo;re already there, one perfect bite away.&rdquo;</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    </div>
+
+    <div class="toast-msg" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="assets/Javascript/script.js" defer></script>
+</body>
+</html>
